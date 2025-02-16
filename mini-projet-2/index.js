@@ -1,23 +1,4 @@
 
-
-// document.getElementById("myForm").addEventListener("submit", function(event) {
-//     event.preventDefault(); // Prevent form from reloading the page
-
-//     todo = document.getElementById("todo").value;
-//     if (todo){
-//         todoList = document.getElementById("todoList");
-//         todoList.innerHTML += '<li class="list-group-item d-flex justify-content-between align-items-center"> <span> ' + todo + ' </span> <i class="far fa-trash-alt delete" onclick="deleteTodo(this)"></i> </li>'
-//         document.getElementById("todo").value = "";
-//     }
-
-    
-    
-// });
-
-
-// function deleteTodo(todo){
-//     todo.parentElement.remove(); // delete parent element which is li representing the todo
-// }
 // Add todo functionality
 document.getElementById("myForm").addEventListener("submit", function(event) {
     event.preventDefault();
