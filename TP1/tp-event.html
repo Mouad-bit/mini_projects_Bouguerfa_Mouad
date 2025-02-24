@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+
+<div id="monapp">
+    <button @click="changerTitre">{{ titre }}</button> 
+	<br> <br>
+
+	<div>
+		<button @click="incremente">++</button>
+		{{compteur}}
+		<button @click="decremente">--</button>
+	</div> <br>
+
+	<input type="text" @input="verifierTexte" placeholder="Saisissez du texte sans espace">
+    <p v-if="messageVisible" >Veuillez ne pas utiliser d'espace.</p>
+
+
+</div>
+
+
+<script>
+    const appli = {
+        data() {
+            return {
+                titre: 'Cliquez moi!',
+				compteur : 0,
+				messageVisible: false
+            }
+        },
+        methods: {
+            changerTitre() {
+                this.titre = 'Cliqué!';
+            },
+			decremente(){
+				this.compteur-- ;
+			},
+			incremente(){
+				this.compteur++ ;
+			},
+			verifierTexte(){
+				let valeur = document.getElementsByTagName("input")[0].value;
+                if (valeur.includes(' ')) {
+                    this.messageVisible = true;
+                } 
+				else {
+                    this.messageVisible = false;
+                }
+
+			}
+        }
+    };
+
+    Vue.createApp(appli).mount("#monapp");
+
+</script>
+
+</body>
+</html>
